@@ -1,10 +1,8 @@
 const express = require("express")
 const fileUpload = require("express-fileupload")
-const { AwakeHeroku } = require("awake-heroku");
 const path = require('path')
 
 const app = express()
-AwakeHeroku.add("https://fahabo-video-storage.herokuapp.com");
 
 const PORT = process.env.PORT || 3002
 
@@ -34,5 +32,5 @@ app.post("/upload", async (req, res, next) => {
 })
 
 app.listen(PORT, () => {
-  AwakeHeroku.start();
+  console.log(`Server is running at: `, PORT)
 })
